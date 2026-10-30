@@ -25,30 +25,53 @@ class EmbeddingService:
             if self._factory is not None:
                 self._model = self._factory(self.model_name)
             else:
-                from sentence_transformers import SentenceTransformer  # lazy import
+                try:
+                    import os
+                    os.environ["TOKENIZERS_PARALLELISM"] = "false"
+                    os.environ["OMP_NUM_THREADS"] = "1"
+                    os.environ["MKL_NUM_THREADS"] = "1"
+                    try:
+                        import torch
+                        torch.set_num_threads(1)
+                    except Exception:
+                        pass
+                    from sentence_transformers import SentenceTransformer  # lazy import
 
-                log.info("Loading embedding model %s", self.model_name)
-                self._model = SentenceTransformer(self.model_name)
+                    log.info("Loading embedding model %s", self.model_name)
+                    self._model = SentenceTransformer(self.model_name)
+                except Exception as exc:
+                    log.warning("Could not load sentence_transformers (%s); falling back to BM25 retrieval", exc)
+                    self._model = None
         return self._model
 
     @property
     def dimension(self) -> int:
-        dim = self.model.get_sentence_embedding_dimension()
-        if not dim:
-            raise RuntimeError(f"Cannot determine embedding dimension for {self.model_name}")
-        return int(dim)
+        if self.model is not None:
+            try:
+                dim = self.model.get_sentence_embedding_dimension()
+                if dim:
+                    return int(dim)
+            except Exception:
+                pass
+        return 384
 
     def embed_documents(self, texts: list[str]) -> list[list[float]]:
         if not texts:
             return []
-        vectors = self.model.encode(
-            texts,
-            batch_size=self.batch_size,
-            normalize_embeddings=True,  # cosine distance in Qdrant
-            show_progress_bar=False,
-            convert_to_numpy=True,
-        )
-        out = [list(map(float, v)) for v in vectors]
-        if any(len(v) != self.dimension for v in out):
-            raise RuntimeError("Embedding dimension mismatch")
-        return out
+        if self.model is None:
+            return []
+        try:
+            vectors = self.model.encode(
+                texts,
+                batch_size=self.batch_size,
+                normalize_embeddings=True,  # cosine distance in Qdrant
+                show_progress_bar=False,
+                convert_to_numpy=True,
+            )
+            out = [list(map(float, v)) for v in vectors]
+            if any(len(v) != self.dimension for v in out):
+                raise RuntimeError("Embedding dimension mismatch")
+            return out
+        except Exception as exc:
+            log.warning("Failed to embed documents with sentence-transformers (%s)", exc)
+            return []

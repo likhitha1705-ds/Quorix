@@ -11,12 +11,6 @@ from app.core.config import get_settings
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Pre-warm hybrid retrieval engine and embedder once at startup
-    try:
-        from app.api.routes.retrieve import get_hybrid_retrieval_engine
-        get_hybrid_retrieval_engine()
-    except Exception:
-        pass
     yield
 
 
