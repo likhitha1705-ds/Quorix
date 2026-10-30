@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+httpx
+qdrant-client
+psycopg[binary]
+google-genai
+rank-bm25
+pypdf
+sentence-transformers
+torch
+pytest
+pytest-asyncio
