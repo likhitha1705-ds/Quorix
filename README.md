@@ -72,3 +72,4 @@ pytest
 
 - **Backend API URL**: Configure `VITE_API_URL` or `VITE_BACKEND_URL` in `frontend` environment.
 - **Gemini API Key**: Set `GEMINI_API_KEY` in `backend/.env` for live Google GenAI generation; if omitted, the deterministic grounded offline generator will execute automatically.
+
