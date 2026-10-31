@@ -1,0 +1,43 @@
+{
+  "conversation_id": "CONV-011",
+  "title": "Webhook retry policy",
+  "channel": "#eng-api",
+  "participants": [
+    "Aisha Khan",
+    "Elena Petrova",
+    "Tomas Silva"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-011-m1",
+      "speaker": "Aisha Khan",
+      "content": "Partners complain they miss events when their endpoint is down for more than an hour.",
+      "timestamp": "2026-08-12T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-011-m2",
+      "speaker": "Tomas Silva",
+      "content": "With 3 retries over about 12 minutes we give up too early.",
+      "timestamp": "2026-08-12T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-011-m3",
+      "speaker": "Elena Petrova",
+      "content": "Increase to 5 retries with backoff of 30s, 2m, 10m, 30m, 2h.",
+      "timestamp": "2026-08-12T09:14:00Z"
+    },
+    {
+      "message_id": "CONV-011-m4",
+      "speaker": "Aisha Khan",
+      "content": "Decision: 5 retries. TKT-114 covers the change and the spec update for DOC-006.",
+      "timestamp": "2026-08-12T09:21:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "webhooks",
+      "decision"
+    ]
+  }
+}

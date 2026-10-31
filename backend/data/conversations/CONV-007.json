@@ -1,0 +1,50 @@
+{
+  "conversation_id": "CONV-007",
+  "title": "Raising the catalog TTL after the June load test",
+  "channel": "#eng-platform",
+  "participants": [
+    "Elena Petrova",
+    "Marcus Lee",
+    "Priya Raman"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-007-m1",
+      "speaker": "Marcus Lee",
+      "content": "Load test shows a 62 percent hit ratio at a 120 second TTL. Origin database load is still too high.",
+      "timestamp": "2026-06-10T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-007-m2",
+      "speaker": "Priya Raman",
+      "content": "The price bug is fixed at the source now, so a longer TTL is safe again.",
+      "timestamp": "2026-06-10T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-007-m3",
+      "speaker": "Marcus Lee",
+      "content": "I suggest 600 seconds. Hit ratio in the test climbed to 88 percent.",
+      "timestamp": "2026-06-10T09:14:00Z"
+    },
+    {
+      "message_id": "CONV-007-m4",
+      "speaker": "Priya Raman",
+      "content": "Decision: catalog TTL goes from 120 to 600 seconds. See TKT-111.",
+      "timestamp": "2026-06-10T09:21:00Z"
+    },
+    {
+      "message_id": "CONV-007-m5",
+      "speaker": "Elena Petrova",
+      "content": "Please update DOC-005 once it ships.",
+      "timestamp": "2026-06-10T10:28:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "redis",
+      "ttl",
+      "decision"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "ticket_id": "TKT-109",
+  "title": "Raise default API rate limit to 200 per minute",
+  "description": "Increase RATE_LIMIT_DEFAULT_PER_MINUTE from 100 to 200 as agreed in CONV-005.",
+  "status": "closed",
+  "priority": "medium",
+  "reporter": "Aisha Khan",
+  "assignee": "Elena Petrova",
+  "created_at": "2026-05-03T09:00:00Z",
+  "updated_at": "2026-05-08T12:00:00Z",
+  "labels": [
+    "task",
+    "api",
+    "rate-limit"
+  ],
+  "comments": [],
+  "metadata": {
+    "component": "nova-api",
+    "supersedes_setting": "default_rate_limit: 100 -> 200"
+  },
+  "resolution": "Rolled out to production on 2026-05-08. DOC-003 still lists the old default of 100.",
+  "resolved_at": "2026-05-08T12:00:00Z"
+}

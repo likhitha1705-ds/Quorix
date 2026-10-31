@@ -1,0 +1,43 @@
+{
+  "conversation_id": "CONV-006",
+  "title": "Partner tier rate limit",
+  "channel": "#eng-api",
+  "participants": [
+    "Aisha Khan",
+    "Elena Petrova"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-006-m1",
+      "speaker": "Aisha Khan",
+      "content": "Large partners need more headroom than the default. Suggest a partner tier.",
+      "timestamp": "2026-05-06T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-006-m2",
+      "speaker": "Elena Petrova",
+      "content": "500 requests per minute for contracted partners, enforced by key metadata.",
+      "timestamp": "2026-05-06T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-006-m3",
+      "speaker": "Aisha Khan",
+      "content": "Works for sales. Please keep the default unchanged at 200.",
+      "timestamp": "2026-05-06T09:14:00Z"
+    },
+    {
+      "message_id": "CONV-006-m4",
+      "speaker": "Elena Petrova",
+      "content": "Decision: partner tier is 500/min. Tracked in TKT-110.",
+      "timestamp": "2026-05-06T09:21:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "api",
+      "rate-limit",
+      "decision"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+---
+id: DOC-007
+title: Redis Incident Runbook
+author: Marcus Lee
+created_at: 2026-07-15T09:00:00Z
+updated_at: 2026-07-15T09:00:00Z
+status: approved
+version: 1.0
+tags: [runbook, redis, incident]
+---
+Redis Incident Runbook
+
+Symptom: catalog pages show stale data or latency spikes.
+1. Check Redis memory usage and hit ratio on the nova-catalog dashboard.
+2. If a single hot key is overloaded, see TKT-112 for the stampede mitigation (jittered TTL and a per-key lock).
+3. To clear stale catalog data, delete keys matching catalog:* during a low-traffic window.
+4. If memory is above 90 percent, check the eviction policy is allkeys-lru before scaling Redis.
+5. Escalate to the platform on-call if the hit ratio stays below 60 percent for 15 minutes.

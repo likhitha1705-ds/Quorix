@@ -1,0 +1,28 @@
+{
+  "ticket_id": "TKT-112",
+  "title": "Cache stampede on popular product keys",
+  "description": "Simultaneous expiry of hot catalog keys causes bursts of PostgreSQL queries and latency spikes (CONV-008).",
+  "status": "closed",
+  "priority": "high",
+  "reporter": "Marcus Lee",
+  "assignee": "Priya Raman",
+  "created_at": "2026-07-09T09:00:00Z",
+  "updated_at": "2026-07-16T16:00:00Z",
+  "labels": [
+    "bug",
+    "redis",
+    "performance"
+  ],
+  "comments": [
+    {
+      "author": "Priya Raman",
+      "timestamp": "2026-07-12T10:00:00Z",
+      "content": "Lock uses SET NX with a 2s expiry; waiters retry the cache once before falling back to the database."
+    }
+  ],
+  "metadata": {
+    "component": "nova-catalog"
+  },
+  "resolution": "Added +/-10 percent TTL jitter and a per-key refill lock with a 2 second timeout. Runbook DOC-007 updated.",
+  "resolved_at": "2026-07-16T16:00:00Z"
+}

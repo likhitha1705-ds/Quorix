@@ -1,0 +1,37 @@
+{
+  "conversation_id": "CONV-014",
+  "title": "Rolling out the TTL change safely",
+  "channel": "#eng-platform",
+  "participants": [
+    "Elena Petrova",
+    "Marcus Lee",
+    "Priya Raman"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-014-m1",
+      "speaker": "Elena Petrova",
+      "content": "Reminder: deployment freeze starts Friday 14:00 UTC, config changes included.",
+      "timestamp": "2026-09-08T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-014-m2",
+      "speaker": "Marcus Lee",
+      "content": "TTL 900 is rolled out to staging. I'll promote it to production Thursday.",
+      "timestamp": "2026-09-08T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-014-m3",
+      "speaker": "Priya Raman",
+      "content": "Watch the hit ratio and origin load for an hour after promotion.",
+      "timestamp": "2026-09-08T09:14:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": false,
+    "topics": [
+      "redis",
+      "deployment"
+    ]
+  }
+}

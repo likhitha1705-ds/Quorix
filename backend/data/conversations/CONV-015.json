@@ -1,0 +1,38 @@
+{
+  "conversation_id": "CONV-015",
+  "title": "Session cache TTL",
+  "channel": "#eng-platform",
+  "participants": [
+    "Aisha Khan",
+    "Marcus Lee",
+    "Priya Raman"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-015-m1",
+      "speaker": "Aisha Khan",
+      "content": "Users complain about being logged out of the web app during long checkouts.",
+      "timestamp": "2026-08-01T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-015-m2",
+      "speaker": "Marcus Lee",
+      "content": "Session TTL in Redis is 1800 seconds. That is only 30 minutes.",
+      "timestamp": "2026-08-01T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-015-m3",
+      "speaker": "Priya Raman",
+      "content": "Decision: raise session TTL to 3600 seconds. Marcus will update the configuration.",
+      "timestamp": "2026-08-01T09:14:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "redis",
+      "session",
+      "decision"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "conversation_id": "CONV-004",
+  "title": "Database connection pool exhaustion",
+  "channel": "#eng-oncall",
+  "participants": [
+    "Elena Petrova",
+    "Marcus Lee"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-004-m1",
+      "speaker": "Marcus Lee",
+      "content": "nova-orders hit pool timeouts at 10:40 UTC. Pool size is 10 and checkout was holding connections during payment calls.",
+      "timestamp": "2026-04-09T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-004-m2",
+      "speaker": "Elena Petrova",
+      "content": "We should release the connection before the external payment call. That is a code fix for later.",
+      "timestamp": "2026-04-09T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-004-m3",
+      "speaker": "Marcus Lee",
+      "content": "For now raise DB_POOL_SIZE from 10 to 20. PostgreSQL max connections can handle it. Tracking in TKT-108.",
+      "timestamp": "2026-04-09T09:14:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": false,
+    "topics": [
+      "database",
+      "incident"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "conversation_id": "CONV-009",
+  "title": "Catalog TTL to 900 seconds",
+  "channel": "#eng-platform",
+  "participants": [
+    "Marcus Lee",
+    "Priya Raman"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-009-m1",
+      "speaker": "Marcus Lee",
+      "content": "After the stampede fix, the hit ratio is stable at 91 percent. Origin load is still highest at midday.",
+      "timestamp": "2026-09-03T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-009-m2",
+      "speaker": "Priya Raman",
+      "content": "The proposal in DOC-009 asked for 1200, but that is untested. I would rather make a smaller step.",
+      "timestamp": "2026-09-03T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-009-m3",
+      "speaker": "Marcus Lee",
+      "content": "900 seconds is a moderate increase. Product data rarely changes more often than every 15 minutes.",
+      "timestamp": "2026-09-03T09:14:00Z"
+    },
+    {
+      "message_id": "CONV-009-m4",
+      "speaker": "Priya Raman",
+      "content": "Decision: catalog TTL becomes 900 seconds. Tracked in TKT-115. Session TTL stays unchanged for now.",
+      "timestamp": "2026-09-03T09:21:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "redis",
+      "ttl",
+      "decision"
+    ]
+  }
+}

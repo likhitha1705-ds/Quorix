@@ -1,0 +1,36 @@
+{
+  "conversation_id": "CONV-013",
+  "title": "Team offsite planning",
+  "channel": "#general",
+  "participants": [
+    "Aisha Khan",
+    "Priya Raman",
+    "Tomas Silva"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-013-m1",
+      "speaker": "Aisha Khan",
+      "content": "Vote for the offsite: lakeside cabin or city hotel?",
+      "timestamp": "2026-06-18T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-013-m2",
+      "speaker": "Tomas Silva",
+      "content": "Cabin, as long as there is reliable wifi.",
+      "timestamp": "2026-06-18T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-013-m3",
+      "speaker": "Priya Raman",
+      "content": "City hotel, easier travel for the remote folks. Budget approval due Friday.",
+      "timestamp": "2026-06-18T09:14:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": false,
+    "topics": [
+      "social"
+    ]
+  }
+}

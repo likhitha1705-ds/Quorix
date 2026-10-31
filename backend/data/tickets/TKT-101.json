@@ -1,0 +1,28 @@
+{
+  "ticket_id": "TKT-101",
+  "title": "Introduce Redis cache for the product catalog",
+  "description": "Catalog p95 latency exceeds 1.8s under load (see CONV-001). Add a Redis cache in front of PostgreSQL using cache-aside. Initial catalog TTL: 300 seconds.",
+  "status": "closed",
+  "priority": "high",
+  "reporter": "Marcus Lee",
+  "assignee": "Marcus Lee",
+  "created_at": "2026-01-14T10:00:00Z",
+  "updated_at": "2026-02-02T16:00:00Z",
+  "labels": [
+    "feature",
+    "redis",
+    "performance"
+  ],
+  "comments": [
+    {
+      "author": "Priya Raman",
+      "timestamp": "2026-01-20T11:00:00Z",
+      "content": "Design agreed in CONV-002: cache-aside with invalidation on write."
+    }
+  ],
+  "metadata": {
+    "component": "nova-catalog"
+  },
+  "resolution": "Redis cache deployed to production. Catalog p95 dropped from 1.8s to 240ms. Catalog TTL set to 300 seconds.",
+  "resolved_at": "2026-02-02T16:00:00Z"
+}

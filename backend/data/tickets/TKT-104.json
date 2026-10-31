@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TKT-104",
+  "title": "Updated prices show old value after product update",
+  "description": "Prices changed via the bulk import still display the previous value until the cache expires. Invalidation only runs for the single-product endpoint.",
+  "status": "closed",
+  "priority": "high",
+  "reporter": "Tomas Silva",
+  "assignee": "Marcus Lee",
+  "created_at": "2026-03-20T09:30:00Z",
+  "updated_at": "2026-03-28T15:00:00Z",
+  "labels": [
+    "bug",
+    "redis",
+    "caching"
+  ],
+  "comments": [
+    {
+      "author": "Marcus Lee",
+      "timestamp": "2026-03-22T10:00:00Z",
+      "content": "Root cause confirmed: bulk path skipped invalidation."
+    }
+  ],
+  "metadata": {
+    "component": "nova-catalog",
+    "supersedes_setting": "catalog_ttl: 300 -> 120"
+  },
+  "resolution": "Bulk import now deletes catalog:{product_id} keys. Catalog TTL lowered from 300 to 120 seconds as an interim safeguard (CONV-003).",
+  "resolved_at": "2026-03-28T15:00:00Z"
+}

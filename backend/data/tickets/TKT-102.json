@@ -1,0 +1,21 @@
+{
+  "ticket_id": "TKT-102",
+  "title": "Evaluate Memcached instead of Redis",
+  "description": "Evaluate whether Memcached should replace Redis for the catalog cache to reduce cost.",
+  "status": "wontfix",
+  "priority": "low",
+  "reporter": "Elena Petrova",
+  "assignee": "Elena Petrova",
+  "created_at": "2026-02-05T10:00:00Z",
+  "updated_at": "2026-02-12T10:00:00Z",
+  "labels": [
+    "evaluation",
+    "redis"
+  ],
+  "comments": [],
+  "metadata": {
+    "component": "nova-catalog"
+  },
+  "resolution": "Not pursued. Redis is already deployed and we need its eviction controls and key scanning. Closing as won't fix.",
+  "resolved_at": "2026-02-12T10:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "ticket_id": "TKT-114",
+  "title": "Increase webhook retries from 3 to 5",
+  "description": "Extend webhook retry policy to 5 attempts with backoff of 30s, 2m, 10m, 30m and 2h (CONV-011).",
+  "status": "resolved",
+  "priority": "medium",
+  "reporter": "Aisha Khan",
+  "assignee": "Tomas Silva",
+  "created_at": "2026-08-13T09:00:00Z",
+  "updated_at": "2026-08-27T12:00:00Z",
+  "labels": [
+    "feature",
+    "webhooks"
+  ],
+  "comments": [],
+  "metadata": {
+    "component": "nova-webhooks",
+    "supersedes_setting": "webhook_retries: 3 -> 5"
+  },
+  "resolution": "Deployed on 2026-08-27. DOC-006 still describes 3 retries and needs an update.",
+  "resolved_at": "2026-08-27T12:00:00Z"
+}

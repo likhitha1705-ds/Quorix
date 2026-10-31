@@ -1,0 +1,36 @@
+{
+  "conversation_id": "CONV-008",
+  "title": "Cache stampede on popular products",
+  "channel": "#eng-oncall",
+  "participants": [
+    "Marcus Lee",
+    "Priya Raman"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-008-m1",
+      "speaker": "Marcus Lee",
+      "content": "When a hot product key expires, hundreds of requests hit PostgreSQL at once. We saw a latency spike at the top of the hour.",
+      "timestamp": "2026-07-08T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-008-m2",
+      "speaker": "Priya Raman",
+      "content": "Add jitter to TTLs so keys do not expire together, and a short per-key lock so only one request refills the cache.",
+      "timestamp": "2026-07-08T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-008-m3",
+      "speaker": "Marcus Lee",
+      "content": "Agreed. I'll write it up in TKT-112 and add a step to the Redis runbook.",
+      "timestamp": "2026-07-08T09:14:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": false,
+    "topics": [
+      "redis",
+      "incident"
+    ]
+  }
+}

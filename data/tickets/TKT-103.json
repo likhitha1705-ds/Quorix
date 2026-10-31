@@ -1,0 +1,21 @@
+{
+  "ticket_id": "TKT-103",
+  "title": "Search pagination returns duplicate results",
+  "description": "Cursor pagination on /v1/search returns some items twice when results are updated between page requests.",
+  "status": "closed",
+  "priority": "medium",
+  "reporter": "Tomas Silva",
+  "assignee": "Elena Petrova",
+  "created_at": "2026-03-03T09:00:00Z",
+  "updated_at": "2026-03-14T12:00:00Z",
+  "labels": [
+    "bug",
+    "api"
+  ],
+  "comments": [],
+  "metadata": {
+    "component": "nova-api"
+  },
+  "resolution": "Cursor now encodes a stable sort key (updated_at, id). Duplicates no longer appear.",
+  "resolved_at": "2026-03-14T12:00:00Z"
+}

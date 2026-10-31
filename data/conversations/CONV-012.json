@@ -1,0 +1,37 @@
+{
+  "conversation_id": "CONV-012",
+  "title": "Refresh tokens",
+  "channel": "#eng-security",
+  "participants": [
+    "Aisha Khan",
+    "Elena Petrova"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-012-m1",
+      "speaker": "Aisha Khan",
+      "content": "Moving to short-lived access tokens. 60 minutes, with refresh tokens valid for 30 days.",
+      "timestamp": "2026-05-25T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-012-m2",
+      "speaker": "Elena Petrova",
+      "content": "That replaces the old 24 hour tokens documented in the legacy notes.",
+      "timestamp": "2026-05-25T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-012-m3",
+      "speaker": "Aisha Khan",
+      "content": "Yes. DOC-004 will be the source of truth.",
+      "timestamp": "2026-05-25T09:14:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "security",
+      "auth",
+      "decision"
+    ]
+  }
+}

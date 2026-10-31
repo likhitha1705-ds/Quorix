@@ -1,0 +1,50 @@
+{
+  "conversation_id": "CONV-001",
+  "title": "Why we are adding Redis to the catalog service",
+  "channel": "#eng-platform",
+  "participants": [
+    "Elena Petrova",
+    "Marcus Lee",
+    "Priya Raman"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-001-m1",
+      "speaker": "Priya Raman",
+      "content": "Catalog p95 latency hit 1.8s during the last load test. Almost all of it is repeated PostgreSQL reads of the same product rows.",
+      "timestamp": "2026-01-12T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-001-m2",
+      "speaker": "Marcus Lee",
+      "content": "Agree. A cache in front of nova-catalog is the cheapest fix. Redis is already approved by security, so no new vendor review.",
+      "timestamp": "2026-01-12T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-001-m3",
+      "speaker": "Elena Petrova",
+      "content": "What TTL do we start with? Product data changes a few times a day.",
+      "timestamp": "2026-01-12T09:14:00Z"
+    },
+    {
+      "message_id": "CONV-001-m4",
+      "speaker": "Marcus Lee",
+      "content": "Let's start with 300 seconds and tune from metrics. I'll open TKT-101.",
+      "timestamp": "2026-01-12T09:21:00Z"
+    },
+    {
+      "message_id": "CONV-001-m5",
+      "speaker": "Priya Raman",
+      "content": "Decision: introduce Redis as a catalog cache, initial TTL 300s.",
+      "timestamp": "2026-01-12T10:28:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "redis",
+      "caching",
+      "decision"
+    ]
+  }
+}

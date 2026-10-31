@@ -1,0 +1,23 @@
+{
+  "ticket_id": "TKT-111",
+  "title": "Increase catalog cache TTL to 600 seconds",
+  "description": "Raise CATALOG_CACHE_TTL_SECONDS from 120 to 600 following the load test in CONV-007.",
+  "status": "closed",
+  "priority": "medium",
+  "reporter": "Marcus Lee",
+  "assignee": "Marcus Lee",
+  "created_at": "2026-06-11T09:00:00Z",
+  "updated_at": "2026-06-20T12:00:00Z",
+  "labels": [
+    "task",
+    "redis",
+    "ttl"
+  ],
+  "comments": [],
+  "metadata": {
+    "component": "nova-catalog",
+    "supersedes_setting": "catalog_ttl: 120 -> 600"
+  },
+  "resolution": "Deployed. Hit ratio improved from 62 to 88 percent. DOC-005 updated to 600.",
+  "resolved_at": "2026-06-20T12:00:00Z"
+}

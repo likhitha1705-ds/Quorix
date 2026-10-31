@@ -1,0 +1,25 @@
+{
+  "ticket_id": "TKT-113",
+  "title": "Webhook worker memory leak",
+  "description": "nova-webhooks pods are OOM-killed roughly daily. Heap dumps show partner response bodies retained in the delivery log buffer.",
+  "status": "in_progress",
+  "priority": "high",
+  "reporter": "Tomas Silva",
+  "assignee": "Elena Petrova",
+  "created_at": "2026-07-22T09:00:00Z",
+  "updated_at": "2026-10-05T10:00:00Z",
+  "labels": [
+    "bug",
+    "webhooks"
+  ],
+  "comments": [
+    {
+      "author": "Elena Petrova",
+      "timestamp": "2026-10-05T10:00:00Z",
+      "content": "Fix in review: store only status code and the first 1 KB of the response."
+    }
+  ],
+  "metadata": {
+    "component": "nova-webhooks"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "conversation_id": "CONV-005",
+  "title": "Default API rate limit",
+  "channel": "#eng-api",
+  "participants": [
+    "Aisha Khan",
+    "Elena Petrova"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-005-m1",
+      "speaker": "Aisha Khan",
+      "content": "Several partners hit the 100 requests per minute limit during their nightly sync.",
+      "timestamp": "2026-05-02T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-005-m2",
+      "speaker": "Elena Petrova",
+      "content": "Raising the default to 200 per minute is safe for the gateway. Redis-backed counters handle it.",
+      "timestamp": "2026-05-02T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-005-m3",
+      "speaker": "Aisha Khan",
+      "content": "Approved from the product side.",
+      "timestamp": "2026-05-02T09:14:00Z"
+    },
+    {
+      "message_id": "CONV-005-m4",
+      "speaker": "Elena Petrova",
+      "content": "Decision: default rate limit becomes 200/min. TKT-109 covers the rollout.",
+      "timestamp": "2026-05-02T09:21:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "api",
+      "rate-limit",
+      "decision"
+    ]
+  }
+}

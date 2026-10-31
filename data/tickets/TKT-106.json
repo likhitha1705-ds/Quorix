@@ -1,0 +1,27 @@
+{
+  "ticket_id": "TKT-106",
+  "title": "Checkout requests time out under load",
+  "description": "Checkout requests exceed the 30s gateway timeout during peak traffic. Traces show waiting on the database connection pool.",
+  "status": "closed",
+  "priority": "high",
+  "reporter": "Tomas Silva",
+  "assignee": "Elena Petrova",
+  "created_at": "2026-04-07T09:00:00Z",
+  "updated_at": "2026-04-30T17:00:00Z",
+  "labels": [
+    "bug",
+    "performance"
+  ],
+  "comments": [
+    {
+      "author": "Elena Petrova",
+      "timestamp": "2026-04-12T10:00:00Z",
+      "content": "Related to the pool exhaustion in TKT-108."
+    }
+  ],
+  "metadata": {
+    "component": "nova-orders"
+  },
+  "resolution": "Connection is now released before the external payment call. Timeouts eliminated in load test.",
+  "resolved_at": "2026-04-30T17:00:00Z"
+}

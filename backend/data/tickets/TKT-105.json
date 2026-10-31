@@ -1,0 +1,21 @@
+{
+  "ticket_id": "TKT-105",
+  "title": "Document Redis eviction policy",
+  "description": "Record the eviction policy and memory limit for the catalog Redis instance in the design document.",
+  "status": "closed",
+  "priority": "low",
+  "reporter": "Elena Petrova",
+  "assignee": "Marcus Lee",
+  "created_at": "2026-03-04T09:00:00Z",
+  "updated_at": "2026-03-05T14:30:00Z",
+  "labels": [
+    "documentation",
+    "redis"
+  ],
+  "comments": [],
+  "metadata": {
+    "component": "nova-catalog"
+  },
+  "resolution": "DOC-002 updated: allkeys-lru, 512 MB max memory.",
+  "resolved_at": "2026-03-05T14:30:00Z"
+}

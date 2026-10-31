@@ -1,0 +1,44 @@
+{
+  "conversation_id": "CONV-003",
+  "title": "Stale prices after product updates",
+  "channel": "#eng-catalog",
+  "participants": [
+    "Marcus Lee",
+    "Priya Raman",
+    "Tomas Silva"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-003-m1",
+      "speaker": "Tomas Silva",
+      "content": "QA found that updated prices still show the old value for several minutes. TKT-104 has the repro.",
+      "timestamp": "2026-03-21T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-003-m2",
+      "speaker": "Marcus Lee",
+      "content": "Invalidation on write only covers the single-product endpoint. The bulk price import path never deletes keys, so it waits for the TTL.",
+      "timestamp": "2026-03-21T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-003-m3",
+      "speaker": "Priya Raman",
+      "content": "Short term, lower the catalog TTL from 300 to 120 seconds, and fix the bulk path to invalidate.",
+      "timestamp": "2026-03-21T09:14:00Z"
+    },
+    {
+      "message_id": "CONV-003-m4",
+      "speaker": "Marcus Lee",
+      "content": "I'll ship both. TTL change goes out with the bulk fix.",
+      "timestamp": "2026-03-21T09:21:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "redis",
+      "ttl",
+      "bug"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "conversation_id": "CONV-002",
+  "title": "Cache-aside vs write-through",
+  "channel": "#eng-platform",
+  "participants": [
+    "Elena Petrova",
+    "Marcus Lee",
+    "Priya Raman"
+  ],
+  "messages": [
+    {
+      "message_id": "CONV-002-m1",
+      "speaker": "Marcus Lee",
+      "content": "Write-through keeps the cache warm but couples every catalog write to Redis availability.",
+      "timestamp": "2026-01-20T09:00:00Z"
+    },
+    {
+      "message_id": "CONV-002-m2",
+      "speaker": "Priya Raman",
+      "content": "If Redis is down we should still serve from PostgreSQL. Cache-aside degrades gracefully.",
+      "timestamp": "2026-01-20T09:07:00Z"
+    },
+    {
+      "message_id": "CONV-002-m3",
+      "speaker": "Elena Petrova",
+      "content": "Cache-aside also matches how nova-catalog already structures its repository layer.",
+      "timestamp": "2026-01-20T09:14:00Z"
+    },
+    {
+      "message_id": "CONV-002-m4",
+      "speaker": "Priya Raman",
+      "content": "Decision: cache-aside. Writes invalidate the key instead of updating it.",
+      "timestamp": "2026-01-20T09:21:00Z"
+    }
+  ],
+  "metadata": {
+    "decision": true,
+    "topics": [
+      "redis",
+      "design",
+      "decision"
+    ]
+  }
+}
